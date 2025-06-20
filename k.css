@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Great Vibes', cursive;
+  background: #fff0f5;
+  color: #d63384;
+  overflow: hidden;
+  text-align: center;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Flying emoji background */
+.background-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.emoji {
+  position: absolute;
+  top: 100%;
+  opacity: 0.2;
+  animation: fly 20s linear infinite;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Updated Watermark Background */
+.watermark-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: rgba(255, 105, 180, 0.2); /* slightly darker now */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: pre-line;
+}
+
+.watermark-background::before {
+  content: "I LOVE U BBY ❤️\A POCHUMOCHU ❤️\A MANIMATUM ❤️";
+  line-height: 2.5;
+  animation: scroll 50s linear infinite;
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 2rem;
+}
+
+@keyframes scroll {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(-100%); }
+}
+
+/* Header */
+.header {
+  animation: fadeIn 3s ease-in;
+  z-index: 2;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-style: italic;
+  font-weight: bold;
+  animation: fadeInText 4s ease-in;
+}
+
+/* Subtitle and Arrow */
+.subtitle {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  animation: fadeIn 4s ease-in;
+  z-index: 2;
+}
+
+.arrow {
+  font-size: 3rem;
+  text-decoration: none;
+  color: white;
+  background: #ff4b2b;
+  border-radius: 50%;
+  padding: 1rem 1.4rem;
+  display: inline-block;
+  margin-top: 1.5rem;
+  transition: transform 0.3s ease;
+  animation: pulse 2s infinite;
+  z-index: 2;
+}
+
+.arrow:hover {
+  transform: scale(1.2);
+  background: #ff416c;
+}
+
+/* Animations */
+@keyframes fadeInText {
+  0% { opacity: 0; transform: translateY(-30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}

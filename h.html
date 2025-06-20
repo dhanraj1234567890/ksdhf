@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="k.css">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sorry ATIYA ❤️</title>
+  <link rel="stylesheet" href="k.css" />
+  <!-- Removed Great Vibes font for a simpler style -->
+</head>
+<body>
+<a href="next.html" class="arrow">➤</a>
+
+
+  <!-- Flying emoji background -->
+  <div class="background-animation">
+    <div class="emoji">💖</div><div class="emoji">💕</div><div class="emoji">💗</div><div class="emoji">❤️</div>
+    <div class="emoji">💘</div><div class="emoji">💞</div><div class="emoji">💝</div><div class="emoji">💓</div>
+    <div class="emoji">🕊️</div><div class="emoji">💟</div><div class="emoji">💖</div><div class="emoji">💕</div>
+    <div class="emoji">💗</div><div class="emoji">❤️</div><div class="emoji">💘</div><div class="emoji">💞</div>
+    <div class="emoji">💝</div><div class="emoji">💓</div><div class="emoji">🕊️</div><div class="emoji">💟</div>
+    <div class="emoji">💖</div><div class="emoji">💕</div><div class="emoji">💗</div><div class="emoji">❤️</div>
+    <div class="emoji">💘</div><div class="emoji">💞</div><div class="emoji">💝</div><div class="emoji">💓</div>
+    <div class="emoji">🕊️</div><div class="emoji">💟</div><div class="emoji">💖</div><div class="emoji">💕</div>
+  </div>
+
+  <!-- Watermark text -->
+  <div class="watermark-background"></div>
+
+  <header class="header">
+    <h1><i><b>Sorry Atiya Thawai ❤️</b></i></h1>
+  </header>
+
+  <main>
+    <p class="subtitle">Click the arrow to go next</p>
+    <a href="next.html" class="arrow">➤</a>
+  </main>
+
+  <!-- Romantic piano background music -->
+  <audio id="bg-music" autoplay loop>
+    <source src="https://cdn.pixabay.com/audio/2021/09/03/audio_1f0e7cf84c.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const music = document.getElementById("bg-music");
+      music.volume = 0;
+      let fadeIn = setInterval(() => {
+        if (music.volume < 0.5) {
+          music.volume = Math.min(music.volume + 0.01, 0.5);
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 200);
+
+      const emojis = document.querySelectorAll('.emoji');
+      emojis.forEach((el) => {
+        el.style.left = `${Math.random() * 100}%`;
+        el.style.animationDelay = `${Math.random() * 25}s`;
+        el.style.fontSize = `${Math.random() * 2 + 1.5}rem`;
+      });
+    });
+  </script>
+
+</body>
+</html>
